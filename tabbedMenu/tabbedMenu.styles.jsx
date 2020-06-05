@@ -12,17 +12,31 @@ export const TabbedMenuContainer = styled.div`
 
 const activeStyles = css`
   color: blue;
-  border-bottom: 2px blue solid;
+
+  & > .active-tab-line {
+    transform: translateY(0);
+  }
 `;
 
 const normalStyles = css`
-  border-bottom: none;
+  position: relative;
+  overflow-y: hidden;
+
+  & > .active-tab-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.1s;
+    transform: translateY(100px);
+    height: 2px;
+    width: 100%;
+    background: blue;
+  }
 `;
 
-// const getState = ({ active }) => (active ? activeStyles : normalStyles);
-
 export const TabButton = styled.div`
-  color: #111111;
+  color: #000000;
+  padding: 1rem;
 
   &:hover {
     cursor: pointer;

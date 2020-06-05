@@ -23,9 +23,13 @@ const TabbedMenu = ({ options }) => {
         index === 0 ? (
           <TabButton className="active" onClick={() => setActiveTab(index)}>
             {option}
+            <div className="active-tab-line"></div>
           </TabButton>
         ) : (
-          <TabButton onClick={() => setActiveTab(index)}>{option}</TabButton>
+          <TabButton onClick={() => setActiveTab(index)}>
+            {option}
+            <div className="active-tab-line"></div>
+          </TabButton>
         )
       )}
     </TabbedMenuContainer>
